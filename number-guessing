@@ -1,0 +1,24 @@
+from random import randint
+def number_guess_game():
+    number=randint(1,50)
+    player_score=0
+    tries=0
+    
+    guess=int(input("guess the number: "))
+    while guess!=number:
+        print("Sorry, wrong guess")
+        tries+=1
+        if guess< number:
+            print("guess a higher number ")
+            guess=int(input("guess the number: "))
+        else:
+            print("guess a lower number")
+            guess=int(input("guess the number: "))
+    if guess==number:
+        print("You Win! correct guess")
+        player_score+=10-tries
+    print(f"you gave the correct answer in {tries} tries")
+    print(f"the number was {number}")
+    print(f"your score is {player_score}")
+    
+        
